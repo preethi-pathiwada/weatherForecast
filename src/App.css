@@ -38,6 +38,17 @@ body {
   font-size: 10px;
 }
 
+.error-container{
+  display: flex;
+  height:70vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-msg{
+  color:red;
+}
+
 @media all and (min-width: 768px) {
   .input-container {
     height: 40px;

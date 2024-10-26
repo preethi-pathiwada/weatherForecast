@@ -5,7 +5,7 @@ import CurrentWeather from './components/CurrentWeather'
 import Forecast from './components/Forecast'
 
 class App extends Component {
-  state = {cityName: '', weatherData: null, error: ''}
+  state = {cityName: '', weatherData: null, error: '', buttonClicked: false}
 
   componentDidMount() {
     this.getResults()
@@ -31,6 +31,7 @@ class App extends Component {
   }
 
   clickSearch = () => {
+    this.setState(prevState => ({buttonClicked: !prevState.buttonClicked}))
     this.getResults()
   }
 
@@ -54,7 +55,9 @@ class App extends Component {
           {weatherData !== null ? (
             <CurrentWeather weatherData={weatherData} />
           ) : (
-            <p>{error}</p>
+           <div className="error-container">
+             <p className="error-msg">{error}</p>
+           </div>
           )}
           <Forecast cityName={cityName} />
         </div>

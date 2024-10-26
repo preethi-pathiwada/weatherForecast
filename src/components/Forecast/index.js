@@ -17,7 +17,9 @@ class Forecast extends Component {
     const response = await fetch(
       `api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`,
     )
-    console.log(`api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`)
+    console.log(
+      `api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`,
+    )
     const data = await response.json()
     if (response.ok) {
       console.log(response)
@@ -30,7 +32,7 @@ class Forecast extends Component {
   render(props) {
     return (
       <>
-        <h1>HEllo</h1>
+       
       </>
     )
   }
